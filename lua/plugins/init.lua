@@ -31,6 +31,18 @@ return {
   },
 
   {
+    "nvimtools/none-ls.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "nvimtools/none-ls-extras.nvim",
+      "williamboman/mason.nvim",
+    },
+    config = function()
+      return "configs.null-ls"
+    end,
+  },
+
+  {
     "jay-babu/mason-null-ls.nvim",
     event = "VeryLazy",
     dependencies = {
@@ -83,16 +95,6 @@ return {
         "javascript",
         "python",
       },
-    },
-  },
-  {
-    "nvimtools/none-ls.nvim",
-    event = "VeryLazy",
-    opts = function()
-      return require "configs.null-ls" -- hoặc configs.none-ls tùy bạn đặt tên
-    end,
-    dependencies = {
-      "williamboman/mason.nvim",
     },
   },
 
